@@ -1,0 +1,10 @@
+Build and deploy:
+  image: google/cloud-sdk:latest
+  script:
+    - echo $SERVICE_ACCOUNT_KEY | base64 --decode > key.json
+    - gcloud auth activate-service-account --key-file=key.json
+    - gcloud container builds submit --project dataquest-flower --config cloudbuild.yaml --substitutions _TAG=$CI_COMMIT_SHA .
+  except:
+    - tags
+  only:
+    - master

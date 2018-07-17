@@ -1,0 +1,13 @@
+steps:
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/docs:${_TAG}', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/docs:${_TAG}']
+
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['set', 'image', 'deployment', 'docs', 'docs=gcr.io/$PROJECT_ID/docs:${_TAG}', '--namespace=prod', '--record']
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=dataquest'

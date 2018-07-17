@@ -1,0 +1,9 @@
+baseURL: https://docs.dataquest.io/
+languageCode: en-us
+title: Dataquest documentation
+theme: learn
+pygmentsCodeFences: true
+outputs:
+  home: [HTML, JSON]
+params:
+  themeVariant: mine
