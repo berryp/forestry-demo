@@ -1,3 +1,6 @@
+---
+
+---
 # DevOps cheatsheet
 
 This document is a brain dump of all the things that might be useful when DevOps is Unavailable. It contains various instructions for deployments, Kubernetes, Logging and the likes, and has links to further information and documentation. If you notice any issues or missing information please log it in Twist, in the `#Devops` channel - you’re also welcome to make changes to or contribute to this document.
@@ -153,7 +156,7 @@ cloud_sql_proxy -instances=dataquest-flower:us-east1:dataquest-prod==tcp:3306 &
 
 Wait for the shell to print `Ready for new connections`, then
 
-```text
+```shell
 psql -h 127.0.0.1 -p 3306 -U posqgres dsserverprod
 ```
 

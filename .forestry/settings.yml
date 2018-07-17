@@ -1,0 +1,18 @@
+---
+new_page_extension: html
+auto_deploy: false
+admin_path: ''
+webhook_url: 
+collections:
+- path: ''
+  label: Pages
+  create: all
+- path: _posts
+  label: Posts
+  create: all
+  default_front_matter_template: post
+upload_dir: uploads
+public_path: "/uploads"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":year:/:month:/:day:/:filename:"
